@@ -1,0 +1,1327 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+    
+    
+      
+        <title>Kubernetes - Dekorate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.5143246d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red+Hat+Text:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Red Hat Text";--md-code-font-family:"Ubuntu Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kubernetes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../site" title="Dekorate" class="md-header__button md-logo" aria-label="Dekorate" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dekorate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kubernetes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/dekorateio/dekorate/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../site" title="Dekorate" class="md-nav__button md-logo" aria-label="Dekorate" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Dekorate
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/dekorateio/dekorate/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gs-spring-boot" class="md-nav__link">
+        Spring Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gs-quarkus" class="md-nav__link">
+        Quarkus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gs-thorntail" class="md-nav__link">
+        Thorntail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gs-generic-java" class="md-nav__link">
+        Generic Java Application
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Usage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Kubernetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="" class="md-nav__link md-nav__link--active">
+        Kubernetes
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    Kubernetes
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubernetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-kubernetes-annotation-processor-to-the-classpath" class="md-nav__link">
+    Adding the kubernetes annotation processor to the classpath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-and-version" class="md-nav__link">
+    Name and Version
+  </a>
+  
+    <nav class="md-nav" aria-label="Name and Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lightweight-build-tool-integration" class="md-nav__link">
+    Lightweight build tool integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-extra-ports-and-exposing-them-as-services" class="md-nav__link">
+    Adding extra ports and exposing them as services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-container-environment-variables" class="md-nav__link">
+    Adding container environment variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-environment-variables-from-configmap" class="md-nav__link">
+    Adding environment variables from ConfigMap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-environment-variables-from-secrets" class="md-nav__link">
+    Adding environment variables from Secrets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-volumes-and-mounts" class="md-nav__link">
+    Working with volumes and mounts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vcs-options" class="md-nav__link">
+    Vcs Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Vcs Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-remote" class="md-nav__link">
+    Specifying remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-vcs-urls-to-https" class="md-nav__link">
+    Converting vcs urls to https
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvm-options" class="md-nav__link">
+    Jvm Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-resources" class="md-nav__link">
+        Container resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openshift.md" class="md-nav__link">
+        OpenShift
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tekton" class="md-nav__link">
+        Tekton
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prometheus" class="md-nav__link">
+        Prometheus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jaeger" class="md-nav__link">
+        Jaeger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-binding" class="md-nav__link">
+        ServiceBinding CRD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using-bom" class="md-nav__link">
+        Using the BOM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Framework integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Framework integration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Framework integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../framework-integration-overview.md" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spring-boot-integration" class="md-nav__link">
+        Spring Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quarkus-integration" class="md-nav__link">
+        Quarkus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thorntail.md" class="md-nav__link">
+        Thorntail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotation-less-configuration" class="md-nav__link">
+        Annotation Less
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Experimental features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Experimental features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Experimental features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ef-overview" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-build-hook" class="md-nav__link">
+        Docker Build Hook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s2i-build-hook" class="md-nav__link">
+        Source To Image Build Hook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jib-build-hook" class="md-nav__link">
+        Jib Build Hook
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    Kubernetes
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubernetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-kubernetes-annotation-processor-to-the-classpath" class="md-nav__link">
+    Adding the kubernetes annotation processor to the classpath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-and-version" class="md-nav__link">
+    Name and Version
+  </a>
+  
+    <nav class="md-nav" aria-label="Name and Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lightweight-build-tool-integration" class="md-nav__link">
+    Lightweight build tool integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-extra-ports-and-exposing-them-as-services" class="md-nav__link">
+    Adding extra ports and exposing them as services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-container-environment-variables" class="md-nav__link">
+    Adding container environment variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-environment-variables-from-configmap" class="md-nav__link">
+    Adding environment variables from ConfigMap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-environment-variables-from-secrets" class="md-nav__link">
+    Adding environment variables from Secrets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-volumes-and-mounts" class="md-nav__link">
+    Working with volumes and mounts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vcs-options" class="md-nav__link">
+    Vcs Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Vcs Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-remote" class="md-nav__link">
+    Specifying remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-vcs-urls-to-https" class="md-nav__link">
+    Converting vcs urls to https
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvm-options" class="md-nav__link">
+    Jvm Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/dekorateio/dekorate/edit/master/docs/kubernetes.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Kubernetes</h1>
+                
+                <h3 id="kubernetes">Kubernetes</h3>
+<p><a href="annotations/kubernetes-annotations/src/main/java/io/dekorate/kubernetes/annotation/KubernetesApplication.java">@KubernetesApplication</a> is a more specialized form of <a href="core/src/main/java/io/dekorate/annotation/Dekorate.java">@Dekorate</a>.
+It can be added to your project like:</p>
+<pre><code class="language-java">import io.dekorate.kubernetes.annotation.KubernetesApplication;
+
+@KubernetesApplication
+public class Main {
+
+    public static void main(String[] args) {
+      //Your application code goes here.
+    }
+}
+</code></pre>
+<p>When the project gets compiled, the annotation will trigger the generation of a <code>Deployment</code> in both json and yml that
+will end up under 'target/classes/META-INF/dekorate'.</p>
+<p>The annotation comes with a lot of parameters, which can be used in order to customize the <code>Deployment</code> and/or trigger
+the generations of addition resources, like <code>Service</code> and <code>Ingress</code>.</p>
+<h4 id="adding-the-kubernetes-annotation-processor-to-the-classpath">Adding the kubernetes annotation processor to the classpath</h4>
+<p>This module can be added to the project using:</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;io.dekorate&lt;/groupId&gt;
+  &lt;artifactId&gt;kubernetes-annotations&lt;/artifactId&gt;
+  &lt;version&gt;2.6.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h4 id="name-and-version">Name and Version</h4>
+<p>So where did the generated <code>Deployment</code> gets its name, docker image etc from?</p>
+<p>Everything can be customized via annotation parameters, application configuration and system properties.
+On top of that, lightweight integration with build tools is provided in order to reduce duplication.</p>
+<p>Note, that part-of, name and version are part of multiple annotations / configuration groups etc.</p>
+<p>When a single application configuration is found and no explict image configuration value has been used for (group, name &amp; version), values from the application configuration will be used.</p>
+<p>For example:</p>
+<pre><code class="language-java">@KubernetesApplication(name=&quot;my-app&quot;)
+@DockerBuild(registry=&quot;quay.io&quot;)
+public class Main {
+}
+</code></pre>
+<p>In the example above, docker is configured with no explicit value on <code>name</code>. In this case that name from <code>@KubernetesApplication(name="my-app")</code> will be used.</p>
+<p>The same applies when property configuration is used:</p>
+<pre><code>io.dekorate.kubernetes.name=my-app
+io.dekorate.docker.registry=quay.io
+</code></pre>
+<p>Note: Application configuration <code>part-of</code> corresponds to image configuration <code>group</code>.</p>
+<h5 id="lightweight-build-tool-integration">Lightweight build tool integration</h5>
+<p>Lightweight integration with build tools, refers to reading information from the build tool config without bringing in the build tool itself into the classpath.
+The information read from the build tool is limited to:</p>
+<ul>
+<li>name / artifactId</li>
+<li>version</li>
+<li>output file</li>
+</ul>
+<p>For example in the case of maven it refers to parsing the pom.xml with DOM in order to fetch the artifactId and version.</p>
+<p>Supported build tools:</p>
+<ul>
+<li>maven</li>
+<li>gradle</li>
+<li>sbt</li>
+<li>bazel</li>
+</ul>
+<p>For all other build tools, the name and version need to be provided via <code>application.properties</code>:</p>
+<pre><code>dekorate.kubernetes.name=my-app
+dekorate.kubernetes.version=1.1.0.Final
+</code></pre>
+<p>or the core annotations:</p>
+<pre><code class="language-java">@KubernetesApplication(name = &quot;my-app&quot;, version=&quot;1.1.0.Final&quot;)
+public class Main {
+}
+</code></pre>
+<p>or</p>
+<pre><code class="language-java">@OpenshiftApplication(name = &quot;my-app&quot;, version=&quot;1.1.0.Final&quot;)
+public class Main {
+}
+</code></pre>
+<p>and so on...</p>
+<p>The information read from the build tool, is added to all resources as labels (name, version).
+They are also used to name images, containers, deployments, services etc.</p>
+<p>For example for a gradle app, with the following <code>gradle.properties</code>:</p>
+<pre><code class="language-properties">name = my-gradle-app
+version = 1.0.0
+</code></pre>
+<p>The following deployment will be generated:</p>
+<pre><code class="language-yaml">apiVersion: &quot;apps/v1&quot;
+kind: &quot;Deployment&quot;
+metadata:
+  name: &quot;kubernetes-example&quot;
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: &quot;my-gradle-app&quot;
+      app.kubernetes.io/version: &quot;1.0-SNAPSHOT&quot;
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: &quot;my-gradle-app&quot;
+        app.kubernetes.io/version: &quot;1.0-SNAPSHOT&quot;
+    spec:
+      containers:
+      - env:
+        - name: &quot;KUBERNETES_NAMESPACE&quot;
+          valueFrom:
+            fieldRef:
+              fieldPath: &quot;metadata.namespace&quot;
+        image: &quot;default/my-gradle-app:1.0-SNAPSHOT&quot;
+        imagePullPolicy: &quot;IfNotPresent&quot;
+        name: &quot;my-gradle-app&quot;
+</code></pre>
+<p>The output file name may be used in certain cases, to set the value of <code>JAVA_APP_JAR</code> an environment variable that points to the build jar.</p>
+<h4 id="adding-extra-ports-and-exposing-them-as-services">Adding extra ports and exposing them as services</h4>
+<p>To add extra ports to the container, you can add one or more <code>@Port</code> into your  <a href="annotations/kubernetes-annotations/src/main/java/io/dekorate/kubernetes/annotation/KubernetesApplication.java">@KubernetesApplication</a>:</p>
+<pre><code class="language-java">import io.dekorate.kubernetes.annotation.Port;
+import io.dekorate.kubernetes.annotation.KubernetesApplication;
+
+@KubernetesApplication(ports = @Port(name = &quot;web&quot;, containerPort = 8080))
+public class Main {
+
+  public static void main(String[] args) {
+    //Your code goes here
+  }
+}
+</code></pre>
+<p>This will trigger the addition of a container port to the <code>Deployment</code> but also will trigger the generation of a <code>Service</code> resource.</p>
+<p>Everything that can be defined using annotations, can also be defined using <code>application.properties</code>.
+To add a port using <code>application.properties</code>:</p>
+<pre><code>dekorate.kubernetes.ports[0].name=web
+dekorate.kubernetes.ports[0].container-port=8080
+</code></pre>
+<p><strong>NOTE:</strong>  This doesn't need to be done explicitly, if the application framework is detected and support, ports can be extracted from there <em>(see below)</em>.</p>
+<p><strong>IMPORTANT</strong>: When mixing annotations and <code>application.properties</code> the latter will always take precedence overriding values that defined using annotations.
+This allows users to define the configuration using annotations and externalize configuration to <code>application.properties</code>.</p>
+<p><strong>REMINDER</strong>: A complete reference on all the supported properties can be found in the <a href="assets/config.md">configuration options guide</a>.</p>
+<h4 id="adding-container-environment-variables">Adding container environment variables</h4>
+<p>To add extra environment variables to the container, you can add one or more <code>@EnvVar</code> into your  <a href="annotations/kubernetes-annotations/src/main/java/io/dekorate/kubernetes/annotation/KubernetesApplication.java">@KubernetesApplication</a> :</p>
+<pre><code class="language-java">import io.dekorate.kubernetes.annotation.Env;
+import io.dekorate.kubernetes.annotation.KubernetesApplication;
+
+@KubernetesApplication(envVars = @Env(name = &quot;key1&quot;, value = &quot;var1&quot;))
+public class Main {
+
+  public static void main(String[] args) {
+    //Your code goes here
+  }
+}
+</code></pre>
+<p>Additional options are provided for adding environment variables from fields, config maps and secrets.</p>
+<p>To add environment variables using <code>application.properties</code>:</p>
+<pre><code>dekorate.kubernetes.env-vars[0].name=key1
+dekorate.kubernetes.env-vars[0].value=value1
+</code></pre>
+<h4 id="adding-environment-variables-from-configmap">Adding environment variables from ConfigMap</h4>
+<p>To add an environment variable that points to a ConfigMap property, you need to specify the configmap using the <code>configmap</code> property in the @Env annotation.
+The configmap key will be specified by the <code>value</code> property. So, in this case <code>value</code> has the meaning of <code>value from key</code>.</p>
+<pre><code class="language-java">import io.dekorate.kubernetes.annotation.Env;
+import io.dekorate.kubernetes.annotation.KubernetesApplication;
+
+@KubernetesApplication(envVars = @Env(name = &quot;key1&quot;, configmap=&quot;my-config&quot;, value = &quot;key1&quot;))
+public class Main {
+
+  public static void main(String[] args) {
+    //Your code goes here
+  }
+}
+</code></pre>
+<p>To add an environment variable referencing a config map using <code>application.properties</code>:</p>
+<pre><code>dekorate.
+.env-vars[0].name=key1
+dekorate.kubernetes.env-vars[0].value=key1
+dekorate.kubernetes.env-vars[0].config-map=my-config
+</code></pre>
+<h4 id="adding-environment-variables-from-secrets">Adding environment variables from Secrets</h4>
+<p>To add an environment variable that points to a Secret property, you need to specify the configmap using the <code>secret</code> property in the @Env annotation.
+The secret key will be specified by the <code>value</code> property. So, in this case <code>value</code> has the meaning of <code>value from key</code>.</p>
+<pre><code class="language-java">import io.dekorate.kubernetes.annotation.Env;
+import io.dekorate.kubernetes.annotation.KubernetesApplication;
+
+@KubernetesApplication(envVars = @Env(name = &quot;key1&quot;, secret=&quot;my-secret&quot;, value = &quot;key1&quot;))
+public class Main {
+
+  public static void main(String[] args) {
+    //Your code goes here
+  }
+}
+</code></pre>
+<p>To add an environment variable referencing a secret using <code>application.properties</code>:</p>
+<pre><code>dekorate.kubernetes.env-vars[0].name=key1
+dekorate.kubernetes.env-vars[0].value=key1
+dekorate.kubernetes.env-vars[0].secret=my-config
+</code></pre>
+<h4 id="working-with-volumes-and-mounts">Working with volumes and mounts</h4>
+<p>To define volumes and mounts for your application, you can use something like:</p>
+<pre><code class="language-java">import io.dekorate.kubernetes.annotation.Mount;
+import io.dekorate.kubernetes.annotation.PersistentVolumeClaimVolume;
+import io.dekorate.kubernetes.annotation.KubernetesApplication;
+
+@KubernetesApplication(pvcVolumes = @PersistentVolumeClaimVolume(volumeName = &quot;mysql-volume&quot;, claimName = &quot;mysql-pvc&quot;),
+  mounts = @Mount(name = &quot;mysql-volume&quot;, path = &quot;/var/lib/mysql&quot;)
+)
+public class Main {
+
+  public static void main(String[] args) {
+    //Your code goes here
+  }
+}
+</code></pre>
+<p>To define the same volume and mount via <code>application.properties</code>:</p>
+<pre><code>dekorate.kubernetes.pvc-volumes[0].volume-name=mysql-volume
+dekorate.kubernetes.pvc-volumes[0].claim-name=mysql-pvc
+dekorate.kubernetes.mounts[0].name=mysql-volume
+dekorate.kubernetes.mounts[0].path=/var/lib/mysql
+</code></pre>
+<p>Currently, the supported annotations for specifying volumes are:</p>
+<ul>
+<li>@PersistentVolumeClaimVolume</li>
+<li>@SecretVolume</li>
+<li>@ConfigMapVolume</li>
+<li>@AwsElasticBlockStoreVolume</li>
+<li>@AzureDiskVolume</li>
+<li>@AzureFileVolume</li>
+</ul>
+<h4 id="vcs-options">Vcs Options</h4>
+<p>Most of the generated resources contain the kubernetes recommended annotations for specifying things like:</p>
+<ul>
+<li>vcs url</li>
+<li>commit id</li>
+</ul>
+<p>These are extracted from the project <code>.git/config</code> file (Currently only git is supported).
+Out of the box, the url of the <code>origin</code> remote will be used verbatim.</p>
+<h5 id="specifying-remote">Specifying remote</h5>
+<p>In some cases users may prefer to use another remote.
+This can be done with the use of <code>@VcsOptions</code> annotation:</p>
+<pre><code class="language-java">import io.dekorate.options.annotation.JvmOptions;
+import io.dekorate.options.annotation.GarbageCollector;
+import io.dekorate.kubernetes.annotation.KubernetesApplication;
+
+@KubernetesApplication
+@VcsOptions(remote=&quot;myfork&quot;)
+public class Main {
+
+  public static void main(String[] args) {
+    //Your code goes here
+  }
+}
+</code></pre>
+<p>In the example above <code>myfork</code> will be used as the remote. So, generated resources will be annotated with the url of the <code>myfork</code> remote.</p>
+<p>For users that prefer using <code>application.properties</code>:</p>
+<pre><code>dekorate.vcs.remote=myfork
+</code></pre>
+<h5 id="converting-vcs-urls-to-https">Converting vcs urls to https</h5>
+<p>The vcs related annotations are mostly used by tools. For public repositories its often simpler for tools, to access the repository anonymous access.
+This is possible when using git over https, but not possible when using git over ssh. So, there are cases where users would rather develop using <code>git+ssh</code>
+but have 3d-party tools use <code>https</code> instead. To force dekorate covnert vcs urls to <code>https</code> one case use the <code>httpsPreferred</code> parameter of <code>@VcsOptions</code>.
+Or using properties:</p>
+<pre><code>dekoarate.vcs.https-preferred=true
+</code></pre>
+<h4 id="jvm-options">Jvm Options</h4>
+<p>It's common to pass the JVM options in the manifests using the <code>JAVA_OPTS</code> or <code>JAVA_OPTIONS</code> environment variable of the application container.
+This is something complex as it usually difficult to remember all options by heart and thus its error prone.
+The worst part is that you usually don't realize the mistake until it's TOO
+late.</p>
+<p>Dekorate provides a way to manage those options using the <code>@JvmOptions</code> annotation, which is included in the <code>options-annotations</code> module.</p>
+<pre><code class="language-java">import io.dekorate.options.annotation.JvmOptions;
+import io.dekorate.options.annotation.GarbageCollector;
+import io.dekorate.kubernetes.annotation.KubernetesApplication;
+
+@KubernetesApplication
+@JvmOptions(server=true, xmx=1024, preferIpv4Stack=true, gc=GarbageCollector.SerialGC)
+public class Main {
+
+  public static void main(String[] args) {
+    //Your code goes here
+  }
+}
+</code></pre>
+<p>or via <code>application.properties</code>:</p>
+<pre><code>dekorate.jvm.server=true
+dekorate.jvm.xmx=1024
+dekorate.jvm.prefer-ipv4-stack=true
+dekorate.jvm.gc=GarbageCollector.SerialGC
+</code></pre>
+<p>This module can be added to the project using:</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;io.dekorate&lt;/groupId&gt;
+  &lt;artifactId&gt;option-annotations&lt;/artifactId&gt;
+  &lt;version&gt;2.6.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p><strong>Note</strong>: The module is included in all starters.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../usage" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Overview
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../container-resources" class="md-footer__link md-footer__link--next" aria-label="Next: Container resources" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Container resources
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+    
+  </body>
+</html>
